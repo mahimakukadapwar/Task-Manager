@@ -20,12 +20,7 @@ class TaskManager:
                 priority_info = f" | Priority: {task_info['priority']}" if task_info['priority'] else ""
                 print(f"{idx}. {task_info['task']} - {status}{deadline_info}{priority_info}")
 
-    def mark_task_completed(self, task_index):
-        if 1 <= task_index <= len(self.tasks):
-            self.tasks[task_index - 1]["completed"] = True
-            print(f"Task '{self.tasks[task_index - 1]['task']}' marked as completed.")
-        else:
-            print("Invalid task index.")
+    #
 
     def edit_task(self, task_index):
         if 1 <= task_index <= len(self.tasks):
@@ -63,10 +58,7 @@ def main():
             task_manager.add_task(task, deadline, priority)
         elif choice == "2":
             task_manager.view_tasks()
-        elif choice == "3":
-            task_manager.view_tasks()
-            task_index = int(input("Enter the task index to mark as completed: "))
-            task_manager.mark_task_completed(task_index)
+        #
         elif choice == "4":
             task_manager.view_tasks()
             task_index = int(input("Enter the task index to edit: "))
